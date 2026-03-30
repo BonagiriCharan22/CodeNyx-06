@@ -1,0 +1,12 @@
+{
+  "name": "decision-platform",
+  "version": "1.0.0",
+  "description": "Decision Intelligence Platform for Social Entrepreneurs",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "setup-db": "cd backend && npm run setup-db"
+  },
+  "private": true
+}
