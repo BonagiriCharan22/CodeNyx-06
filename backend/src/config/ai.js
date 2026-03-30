@@ -8,13 +8,13 @@
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyDR3VNCkEzpPDRtWz6NMq1fn1rr2_ff39U';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'YOUR_GEMINI_API_KEY_HERE';
 
 let genAI = null;
 
 function getAI() {
   if (!genAI) {
-    if (GEMINI_API_KEY === 'AIzaSyDR3VNCkEzpPDRtWz6NMq1fn1rr2_ff39U') {
+    if (GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
       console.warn('[AI] WARNING: Gemini API key not configured. AI features will use fallback responses.');
       return null;
     }
