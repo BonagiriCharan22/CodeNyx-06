@@ -8,13 +8,13 @@
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'YOUR_GEMINI_API_KEY_HERE';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY ||'AIzaSyAJCR1tK8KLmPxNm7JlFd0pcfJf6egSwd8';
 
 let genAI = null;
 
 function getAI() {
   if (!genAI) {
-    if (GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+    if ( !GEMINI_API_KEY) {
       console.warn('[AI] WARNING: Gemini API key not configured. AI features will use fallback responses.');
       return null;
     }
@@ -32,7 +32,7 @@ async function generateResponse(prompt, systemInstruction = '') {
 
   try {
     const model = ai.getGenerativeModel({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       systemInstruction: systemInstruction || undefined,
     });
 

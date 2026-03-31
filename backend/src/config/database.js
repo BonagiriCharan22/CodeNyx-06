@@ -6,9 +6,9 @@ const { Pool } = require('pg');
 // You can use Supabase, Railway, or any PostgreSQL provider
 // ============================================================
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://USER:PASSWORD@HOST:PORT/DATABASE',
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:Rishistudybtech%401@db.yvrjlcnmdpdouqwkoxqg.supabase.co:5432/postgres',
   // OR use individual fields:
-  // host: 'your-host.supabase.co',
+  // host: 'db.yvrjlcnmdpdouqwkoxqg.supabase.co',
   // port: 5432,
   // database: 'postgres',
   // user: 'postgres',
@@ -21,3 +21,7 @@ pool.on('error', (err) => {
 });
 
 module.exports = pool;
+
+// /* FIREBASE (REVERTED - COMMENTED OUT)
+// const admin = require('firebase-admin');
+// ... */

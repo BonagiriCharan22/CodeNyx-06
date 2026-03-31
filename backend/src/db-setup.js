@@ -1,5 +1,7 @@
 //db-setup.js
+// POSTGRESQL TABLES SETUP (ORIGINAL - COMMENTED OUT)
 const pool = require('./config/database');
+require('dotenv').config();
 
 async function setupDatabase() {
   console.log('Setting up database tables...');
@@ -103,3 +105,38 @@ setupDatabase().catch(err => {
   console.error('Make sure your DATABASE_URL in .env is correct.');
   process.exit(1);
 });
+
+// FIREBASE FIRESTORE (REVERTED - COMMENTED OUT)
+ /*
+const { db } = require('./config/database');
+
+async function setupDatabase() {
+  console.log('🔥 Verifying Firebase Firestore connection...');
+
+  try {
+    // Test connection
+    await db.collection('test').doc('connection').set({ timestamp: new Date() });
+    await db.collection('test').doc('connection').delete();
+    console.log('✓ Firestore connection OK');
+
+    console.log(`
+✅ Firestore collections auto-created on first write:
+- users 
+- ideas
+- chat_sessions, chat_messages
+- pitch_sessions, pitch_messages  
+- simulation_results
+- collaborators
+- sessions
+
+No schema needed!`);
+  } catch (err) {
+    console.error('❌ Firestore setup failed:', err.message);
+    console.error('1. Check firebase-service-account.json exists');
+    console.error('2. Verify Firebase project has Firestore enabled');
+    process.exit(1);
+  }
+}
+
+setupDatabase();
+ */
